@@ -1,4 +1,128 @@
 .calculator {
-  background: white;
-  color: black;
+  grid-column-start: left-center;
+  grid-column-end: right-center;
+  grid-row-start: calculator-top;
+  grid-row-end: calculator-bottom;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 1;
+}
+
+.calculator-top {
+  height: 20%;
+  width: 100%;
+
+  padding: 1vw 2vw;
+
+  background: rgb(199,199,199);
+  background: linear-gradient(45deg, rgba(199,199,199,0.5) 0%, rgba(222,222,222,0.5) 100%);
+}
+
+.calculation-expression {
+  font-size: 6rem;
+}
+
+.calculation-result {
+  font-size: 4rem;
+}
+
+.calculator-body {
+  height: 80%;
+  width: 100%;
+  
+  font-size: 2vw;
+
+  display: grid;
+
+  grid-template-columns: [first] 25% [second] 25% [third] 25% [fourth] 25% [last];
+  grid-template-rows: [first] 25% [second] 25% [third] 25% [fourth] 25% [last];
+}
+
+.calculator-body > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add {
+  grid-column: fourth / last;
+  grid-row: first / second;
+}
+
+.subtract {
+  grid-column: fourth / last;
+  grid-row: second / third;
+}
+
+.multiply {
+  grid-column: fourth / last;
+  grid-row: third / fourth;
+}
+
+.divide {
+  grid-column: fourth / last;
+  grid-row: fourth / last;
+}
+
+.decimal {
+  grid-column: first / second;
+  grid-row: fourth / last;
+}
+
+.zero {
+  grid-column: second / third;
+  grid-row: fourth / last;
+}
+
+.submit {
+  grid-column: third / fourth;
+  grid-row: fourth / last;
+}
+
+.one {
+  grid-column: first / second;
+  grid-row: third / fourth;
+}
+
+.two {
+  grid-column: second / third;
+  grid-row: third / fourth;
+}
+
+.three {
+  grid-column: third / fourth;
+  grid-row: third / fourth;
+}
+
+.four {
+  grid-column: first / second;
+  grid-row: second / third;
+}
+
+.five {
+  grid-column: second / third;
+  grid-row: second / third;
+}
+
+.six {
+  grid-column: third / fourth;
+  grid-row: second / third;
+}
+
+.seven {
+  grid-column: first / second;
+  grid-row: first / second;
+}
+
+.eight {
+  grid-column: second / third;
+  grid-row: first / second;
+}
+
+.nine {
+  grid-column: third / fourth;
+  grid-row: first / second;
 }

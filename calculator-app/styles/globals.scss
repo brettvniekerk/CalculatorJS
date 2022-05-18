@@ -1,16 +1,16 @@
-html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+div {
+  box-sizing: border-box; // important for divs to not change size based on padding or margin change
 }
 
-* {
-  box-sizing: border-box;
+.main {
+  display: grid;
+  grid-template-columns: [left-edge] 20vw [left-center] 60vw [right-center] 20vw [right-edge];
+  grid-template-rows: [top-edge] 20vh [calculator-top] 60vh [calculator-bottom] 20vh [bottom-edge];
+
+  z-index: 1;
 }
