@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 import Calculator from '../components/Calculator'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
 
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
 
   const handleClick = () => {
     setNewTheme(
-      themes[(themes.indexOf(newTheme)+ 1) % themes.length] // percentage operator important for not doubling the none theme twice
+      themes[(themes.indexOf(newTheme) + 1) % themes.length] // percentage operator important for not doubling the none theme twice -- the remainder will always be the index of newTheme
     )
   }
 
@@ -32,6 +33,8 @@ const Home: NextPage = () => {
         <Header handleClick={handleClick} />
 
         <Calculator />
+
+        <Footer />
 
       </main>
 

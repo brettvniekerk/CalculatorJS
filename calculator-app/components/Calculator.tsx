@@ -8,6 +8,7 @@ const Calculator = () => {
 
   const operators = ['+', '-', '*', '/', '.'] // operator values
 
+  // handle button click
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 
     const buttonValue = (e.target as HTMLElement).innerText; // buttonValue now stores target as HTMLlement so it can use innerText without Typescript throwing an error
@@ -27,26 +28,26 @@ const Calculator = () => {
 
   }
 
+  // submit and evaluate calculation
   const submitCalc = () => {
     if (currentCalc == '') { return } // cannot make undefined toString so return if expression empty
 
     setCurrentCalc(eval(currentCalc).toString()) // just replaces calc field 
   }
 
-  // include ability to delete last entered value maybe
-  // const deleteLast = () => {
-  //   if (currentCalc == '') { return } // do nothing if there is nothing in the calc field
+  // clear calculation
+  const clearCalc = () => {
+    if (currentCalc == '') { return } // no need to do anything if theres nothing there
 
-  //   const newCalc = currentCalc.slice(0,-1) // slices out string except for the last digit
-
-  //   setCurrentCalc(newCalc)
-  // }
+    setCurrentCalc('')
+    setResult('')
+  }
 
   return (
 
     <div className={styles['calculator']}>
 
-      <div className={styles['calculator-top']}>
+      <div className={styles['calculator-top']} onClick={clearCalc}>
         <span className={styles['calculation-expression']}>{currentCalc || 0}</span> {/* if no current calculation show 0 */}
         <span className={styles['calculation-result']}>&emsp;{currentCalc === result ? `` : `${result || 0}`}</span> {/* only show result if the current calculation and result dont match */}
       </div>

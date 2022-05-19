@@ -23,6 +23,10 @@
   align-items: center;
 
   background: var(--dark);
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .calculation-expression {
@@ -32,6 +36,7 @@
 
   @media only screen and (max-width: 1200px) { // mobile responsiveness
     font-size: 18vw;
+    padding-left: 3vw;
   }
 
 }
