@@ -1,16 +1,29 @@
-body {
+@use "Global/themes" as theme;
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; // important for divs to not change size based on padding or margin change
+  font-family: 'Fira Sans', sans-serif;
 }
 
-div {
-  box-sizing: border-box; // important for divs to not change size based on padding or margin change
+body {
+  background-color: theme.$light;
+  color: white;
 }
 
 .main {
   display: grid;
-  grid-template-columns: [left-edge] 20vw [left-center] 60vw [right-center] 20vw [right-edge];
+
+  grid-template-columns: [left-edge] 35vw [left-center] 30vw [right-center] 35vw [right-edge];
   grid-template-rows: [top-edge] 20vh [calculator-top] 60vh [calculator-bottom] 20vh [bottom-edge];
+
+  @media only screen and (max-width: 1200px) { // mobile responsiveness
+
+    grid-template-columns: [left-edge] 10vw [left-center] 80vw [right-center] 10vw [right-edge];
+    grid-template-rows: [top-edge] 10vh [calculator-top] 80vh [calculator-bottom] 10vh [bottom-edge];
+    
+  }
 
   z-index: 1;
 }
