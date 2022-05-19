@@ -1,0 +1,27 @@
+.header {
+  grid-row-start: top-edge;
+  grid-row-end: calculator-top;
+  grid-column-start: left-edge;
+  grid-column-end: right-edge;
+
+  display: flex;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.title {
+  display: inline;
+
+  color: var(--dark);
+  opacity: 0.1;
+  font-size: 6vw;
+
+  padding: 2vw;
+
+  &:hover { // use & for parent selector
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.2s;
+  }
+}

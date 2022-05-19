@@ -1,4 +1,93 @@
-@use "Global/themes" as theme;
+// initial values
+:root {
+  --buttons: #e0dee0;
+  --operators: #b0aeb0;
+  --dark: #686668;
+  
+  // this never changes
+  --light: #eee;
+}
+
+// THEMES
+
+// brown theme
+.is-brown-theme {
+  --buttons: #e0a928;
+  --operators: #ad831f;
+  --dark: #634704;
+}
+
+// yellow theme
+.is-yellow-theme {
+  --buttons: #e0d72b;
+  --operators: #ada721;
+  --dark: #635f05;
+}
+
+// green theme
+.is-green-theme {
+  --buttons: #6fe036;
+  --operators: #55ad29;
+  --dark: #28630a;
+}
+
+// turqoise theme
+.is-turqoise-theme {
+  --buttons: #4fe090;
+  --operators: #3dad70;
+  --dark: #156338;
+}
+
+// light blue theme
+.is-lightblue-theme {
+  --buttons: #41c3e0;
+  --operators: #3295ac;
+  --dark: #0f5463;
+}
+
+// dark blue theme
+.is-darkblue-theme {
+  --buttons: #3d52e0;
+  --operators: #2f40ad;
+  --dark: #0d1863;
+}
+
+// purple theme
+.is-purple-theme {
+  --buttons: #8a51e0;
+  --operators: #6a3ead;
+  --dark: #351663;
+}
+
+// pink theme
+.is-pink-theme {
+  --buttons: #e03db5;
+  --operators: #ac2e8a;
+  --dark: #630d4c;
+}
+
+// orange theme
+.is-orange-theme {
+  --buttons: #d95d0b;
+  --operators: #a94908;
+  --dark: #5c2500;
+}
+
+// blood orange theme
+.is-bloodorange-theme {
+  --buttons: #d94a1e;
+  --operators: #a63817;
+  --dark: #5c1500;
+}
+
+// red theme
+.is-red-theme {
+  --buttons: #e12928;
+  --operators: #ad1f1f;
+  --dark: #630404;
+}
+
+
 
 * {
   margin: 0;
@@ -8,8 +97,14 @@
 }
 
 body {
-  background-color: theme.$light;
+  background-color: var(--light);
   color: white;
+
+  // prevent highlighting
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .main {
@@ -22,7 +117,7 @@ body {
 
     grid-template-columns: [left-edge] 10vw [left-center] 80vw [right-center] 10vw [right-edge];
     grid-template-rows: [top-edge] 10vh [calculator-top] 80vh [calculator-bottom] 10vh [bottom-edge];
-    
+
   }
 
   z-index: 1;

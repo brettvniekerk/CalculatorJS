@@ -1,5 +1,3 @@
-@use "Global/themes" as theme;
-
 .calculator {
   grid-column-start: left-center;
   grid-column-end: right-center;
@@ -24,7 +22,7 @@
   display: flex;
   align-items: center;
 
-  background: theme.$dark;
+  background: var(--dark);
 }
 
 .calculation-expression {
@@ -62,20 +60,20 @@
     font-size: 10vw;
   }
 
-  background-color: theme.$buttons;
+  background-color: var(--buttons);
   border-radius: 0 0 1vw 1vw;
 
   display: grid;
 
   grid-template-columns: [first] 25% [second] 25% [third] 25% [fourth] 25% [last];
   grid-template-rows: [first] 25% [second] 25% [third] 25% [fourth] 25% [last];
-}
 
-.calculator-body > * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  &>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 }
 
 
@@ -83,25 +81,25 @@
 .add {
   grid-column: fourth / last;
   grid-row: first / second;
-  background: theme.$operators;
+  background: var(--operators);
 }
 
 .subtract {
   grid-column: fourth / last;
   grid-row: second / third;
-  background: theme.$operators;
+  background: var(--operators);
 }
 
 .multiply {
   grid-column: fourth / last;
   grid-row: third / fourth;
-  background: theme.$operators;
+  background: var(--operators);
 }
 
 .divide {
   grid-column: fourth / last;
   grid-row: fourth / last;
-  background: theme.$operators;
+  background: var(--operators);
   border-radius: 0 0 1vw 0;
 }
 
